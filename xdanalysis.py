@@ -33,11 +33,9 @@ def load_json(line, name, colum_num):
 	write_data(data, name, colum_num)
 
 def write_data(data, name, colum_num):
-	bold = workbook.add_format({'bold': True})
-
-	worksheet.write(0, colum_num, name, bold)
-	worksheet.write(0, colum_num + 1, "Action", bold)
-	worksheet.write(0, colum_num + 2, "Window", bold)
+	worksheet.write(0, colum_num, name)
+	worksheet.write(0, colum_num + 1, "Action")
+	worksheet.write(0, colum_num + 2, "Window")
 
 	worksheet.write(1, colum_num, "GyroUp")
 	worksheet.write(1, colum_num + 1, data["GyroUp"]["action"])
