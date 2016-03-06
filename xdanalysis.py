@@ -33,7 +33,7 @@ def load_file(file_name):
 	while line:
 		if line[0] == "[":
 			name = load_name(line)
-			if not worksheets.has_key(name):
+			if name not in worksheets:
 				worksheets[name] = workbook.add_worksheet()
 				worksheets_num[name] = 0
 				pre_data[name] = {
@@ -43,9 +43,9 @@ def load_file(file_name):
 					"SwipeDown":{"action":"Text Small","window":0},
 					"SingleTap":{"action":"No Gesture","window":0},
 					"SwipeUp":{"action":"Text Big","window":0},
-					"PinchIn":{"action":"Zoom In","window":0},
+					"PinchIn":{"action":"Size Up","window":0},
 					"SwipeRight":{"action":"Back Page","window":0},
-					"PinchOut":{"action":"Zoom Out","window":0},
+					"PinchOut":{"action":"Size Down","window":0},
 					"DoubleTap":{"action":"No Gesture","window":0},
 					"GyroDown":{"action":"Scroll Down","window":0},
 					"ButtonRight":{"action":"No Gesture","window":0}
